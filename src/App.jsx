@@ -22,7 +22,8 @@ function Home() {
   return (
     <main>
       <Hero />
-      <IntroText />
+                  <IntroText />
+
       <ProjectsPreview />
       <ServicesPreview />
       <Testimonials />

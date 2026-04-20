@@ -25,12 +25,7 @@ export default function IntroText() {
           </p>
           <a href="#projects" className="btn-outline">Learn more about us</a>
           
-          <img 
-            src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1600&q=80" 
-            alt="Photographer taking a picture" 
-            className="about-image"
-            loading="lazy"
-          />
+       
         </div>
       </div>
     </section>
