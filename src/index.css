@@ -595,3 +595,127 @@ button { font-family:inherit; cursor:pointer; background:none; border:none; colo
   .project-img-wrapper:last-child { display:none; }
   .footer-top { grid-template-columns:1fr; }
 }
+
+/* ─────────────────────────────────────────────
+   COMING SOON PAGE
+───────────────────────────────────────────── */
+.cs-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Full-bleed background image */
+.cs-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Bottom-only gradient so timer is legible */
+.cs-bottom-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(8,8,8,0.65) 72%,
+    rgba(8,8,8,0.92) 100%
+  );
+}
+
+/* Timer — pinned to the bottom center */
+.cs-timer {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+  width: max-content;
+}
+
+.cs-timer-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.cs-blocks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cs-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 76px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 0.65rem;
+  padding: 0.8rem 0.5rem 0.6rem;
+  backdrop-filter: blur(14px);
+}
+
+.cs-num {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.cs-unit {
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+
+.cs-sep {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.28);
+  line-height: 1;
+  padding-bottom: 1.1rem;
+}
+
+.cs-live-text {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--cream);
+}
+
+/* Fade-up entrance */
+@keyframes csFadeUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.cs-fade {
+  opacity: 0;
+  animation: csFadeUp 1s var(--ease) 0.3s forwards;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cs-timer  { bottom: 1.75rem; }
+  .cs-block  { min-width: 60px; padding: 0.65rem 0.35rem 0.5rem; }
+  .cs-num    { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .cs-sep    { font-size: 1.7rem; padding-bottom: 0.85rem; }
+  .cs-blocks { gap: 0.28rem; }
+}
