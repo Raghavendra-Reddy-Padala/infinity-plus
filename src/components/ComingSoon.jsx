@@ -40,7 +40,7 @@ export default function ComingSoon() {
 
       {/* Timer — pinned to the bottom */}
       <div className="cs-timer cs-fade">
-        <div className="cs-timer-label">Going live on April 27, 2026</div>
+        <div className="cs-timer-label">   </div>
 
         {timeLeft.done ? (
           <p className="cs-live-text">We're live! 🎉</p>
