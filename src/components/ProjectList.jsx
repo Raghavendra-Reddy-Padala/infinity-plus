@@ -73,11 +73,11 @@ export function ProjectsPreview() {
       ))}
 
       {/* Footer CTA */}
-      <div className="container proj-preview-footer border-t">
+      {/* <div className="container proj-preview-footer border-t">
         <Link to="/projects" className="btn-outline">
           See all {projects.length} projects
         </Link>
-      </div>
+      </div> */}
     </section>
   )
 }
